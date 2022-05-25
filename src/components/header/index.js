@@ -1,23 +1,35 @@
 import React from 'react'
 import Container from '../common/container'
-import logoGorila from '../../logo_gorila.svg';
+import ToggleVisibility from './hide'
+import Registers from './registers'
+import LogoGorila from '../../assets/logo-gorila.svg'
 import styled from 'styled-components'
 
 
 const Header = styled.div`
     background-color: #FFF;
-    padding: 8px 0;
+    `
+
+const HeaderWrapper = styled.div`
+    padding: 12px 0;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
 `
+
 const Logo = styled.img`
-    width: 136px;
-    height: 65px;
+    width: 100px;
 `
 
 export default function AppHeader() {
     return(
         <Header>
             <Container>
-                <Logo src={logoGorila} alt="Logo Gorila" />
+                <HeaderWrapper>
+                    <Logo src={LogoGorila} alt="Logo Gorila" />
+                    <ToggleVisibility></ToggleVisibility>
+                    <Registers></Registers>
+                </HeaderWrapper>
             </Container>
         </Header>
     )
