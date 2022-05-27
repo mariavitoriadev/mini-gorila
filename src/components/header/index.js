@@ -2,23 +2,31 @@ import React from 'react'
 import Container from '../common/container'
 import ToggleVisibility from './hide'
 import Registers from './registers'
+import NavigationMenu from './navigation'
 import LogoGorila from '../../assets/logo-gorila.svg'
 import styled from 'styled-components'
 
 
 const Header = styled.div`
     background-color: #FFF;
-    `
+`
 
 const HeaderWrapper = styled.div`
-    padding: 12px 0;
     display: flex; 
     align-items: center;
     justify-content: space-between;
+    
+    @media(max-width: 767px) {
+        flex-wrap: wrap;
+    }
+    
+    @media(min-width: 768px) {
+        padding: 2px 0;
+    }
 `
 
 const Logo = styled.img`
-    width: 100px;
+    width: 136px;
 `
 
 export default function AppHeader() {
@@ -29,6 +37,7 @@ export default function AppHeader() {
                     <Logo src={LogoGorila} alt="Logo Gorila" />
                     <ToggleVisibility></ToggleVisibility>
                     <Registers></Registers>
+                    <NavigationMenu></NavigationMenu>
                 </HeaderWrapper>
             </Container>
         </Header>

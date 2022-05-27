@@ -6,17 +6,18 @@ import styled from 'styled-components'
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; 
 
+const Wrapper = styled.div`
+    flex-grow: 1;
+    cursor: pointer;
+    margin-left: 40px;
+`
+
 export default function ToggleVisibility() {
     const [visible, setVisible] = useState(true)
 
     const toggle = () => {
         setVisible(!visible)
     }
-
-    const Wrapper = styled.div`
-        cursor: pointer;
-        margin-left: 20px;
-    `
 
     return (
         <Wrapper onClick={toggle} >
