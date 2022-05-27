@@ -9,6 +9,10 @@ import styled from 'styled-components'
 
 const Header = styled.div`
     background-color: #FFF;
+
+    @media(min-width: 768px) {
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 10%);
+    }
 `
 
 const HeaderWrapper = styled.div`
@@ -21,7 +25,7 @@ const HeaderWrapper = styled.div`
     }
     
     @media(min-width: 768px) {
-        padding: 2px 0;
+        padding-top: 2px;
     }
 `
 

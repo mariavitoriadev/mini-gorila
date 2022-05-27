@@ -9,6 +9,7 @@ import 'tippy.js/dist/tippy.css';
 const Wrapper = styled.div`
     display: flex;
     height: 65px;
+    margin-left: 20px;
     align-items: center;
     justify-content: space-between;
 `

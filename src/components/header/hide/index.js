@@ -9,7 +9,11 @@ import 'tippy.js/dist/tippy.css';
 const Wrapper = styled.div`
     flex-grow: 1;
     cursor: pointer;
-    margin-left: 40px;
+    margin-left: 20px;
+
+    @media(min-width: 1024px) {
+        margin-left: 40px;
+    }
 `
 
 export default function ToggleVisibility() {
