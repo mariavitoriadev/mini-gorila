@@ -1,5 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
+
+import { useSelector, useDispatch } from 'react-redux'
+import { setSelected } from '../../../../store/navContext'
 
 const ItemWrapper = styled.a`
     width: 50px;
@@ -33,11 +36,15 @@ const NavIcon = styled.img`
 `
 
 export default function NavItem(props) {
-    const [navSelected, setNavSelected] = useState("dashboard")
+
+    
+    const navSelected = useSelector(state => state.navContext.value)
+    const dispatch = useDispatch()
+
 
     return(
         <ItemWrapper 
-        onClick={() => setNavSelected(props.name)} 
+        onClick={() => dispatch(setSelected(props.name))} 
         active={navSelected === props.name ? true : false}
         >
             <NavIcon src={props.icon}/>

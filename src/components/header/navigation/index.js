@@ -48,7 +48,7 @@ const UserItem = styled.a`
 `
 
 export default function NavigationMenu() {
- 
+
     return (
         <Wrapper>
             <Tippy content="Dashboard">
@@ -56,7 +56,7 @@ export default function NavigationMenu() {
                 </NavItem>
             </Tippy>
             <Tippy content="Carteira">
-                <NavItem name="dashboard" icon={WalletIcon}>
+                <NavItem name="wallet" icon={WalletIcon}>
                 </NavItem>
             </Tippy>
             <NavItem name="tool" icon={ToolIcon}>

@@ -32,10 +32,6 @@ const SubTitle = styled.div`
     line-height: 1.4;
 `
 
-const Picker = styled.div`
-    
-`
-
 export default function DateFilter() {
     return (
         <Wrapper>
