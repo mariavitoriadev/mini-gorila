@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom' 
 import styled from 'styled-components'
 import DashIcon from '../../../assets/navigation/dashboard.svg'
 import ToolIcon from '../../../assets/navigation/advanced-tools.svg'
@@ -52,23 +53,29 @@ export default function NavigationMenu() {
     return (
         <Wrapper>
             <Tippy content="Dashboard">
-                <NavItem name="dashboard" icon={DashIcon}>
-                </NavItem>
+                <Link to="/">
+                    <NavItem name="dashboard" icon={DashIcon}></NavItem>
+                </Link>
             </Tippy>
+
             <Tippy content="Carteira">
-                <NavItem name="wallet" icon={WalletIcon}>
-                </NavItem>
+                <Link to="/carteira">
+                    <NavItem name="wallet" icon={WalletIcon}></NavItem>
+                </Link>
             </Tippy>
-            <NavItem name="tool" icon={ToolIcon}>
-            </NavItem>
+            
+            <NavItem name="tool" icon={ToolIcon}></NavItem>
+            
             <Tippy content="Conectar Contas">
-                <NavItem name="connect" icon={ConnectIcon}>
-                </NavItem>
+                <Link to="/contas">
+                    <NavItem name="connect" icon={ConnectIcon}></NavItem>
+                </Link>
             </Tippy>
+            
             <Tippy content="Ajuda">
-                <NavItem name="help" icon={HelpIcon}>
-                </NavItem>
+                <NavItem name="help" icon={HelpIcon}></NavItem>
             </Tippy>
+            
             <UserItem>
                 MI
             </UserItem>
