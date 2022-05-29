@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 import AddIcon from '../../../assets/add-white.svg'
 import LessIcon from '../../../assets/less-white.svg'
 
