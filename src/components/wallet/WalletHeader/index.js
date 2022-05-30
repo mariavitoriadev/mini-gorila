@@ -15,13 +15,15 @@ import { useSelector } from 'react-redux'
 const Wrapper = styled.div`
     padding: 24px 0;
     z-index: 1;
-    position: relative;
+    position: sticky;
+    top: 121px;
     background-color: #ffffff;
     margin-bottom: 30px;
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 5%);
 `
 const FlexRowTop = styled.div`
     display: flex;
+    align-items: flex-end;
     border-bottom: 1px solid #888e8e;
 `
 
@@ -33,9 +35,14 @@ const FlexRowBottom = styled.div`
 const PageTitle = styled.h1`
     margin: 0 5px 0 0;
     color: #2d2d2d;
-    font-size: 50px;
+    font-size: 24px;
     font-weight: 300;
     text-align: left;
+    
+    @media(min-width: 768px) {
+        line-height 1;
+        font-size: 50px;
+    }
 `
 
 const Boldify = styled.strong`

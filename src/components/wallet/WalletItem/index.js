@@ -10,6 +10,7 @@ import ArrowUp from '../../../assets/arrow-up.svg'
 const Wrapper = styled.div`
     cursor: pointer;
     width: 100%;
+    min-width: 500px;
     margin-bottom: 20px;
     padding-bottom: 10px;
 `
@@ -24,17 +25,21 @@ const LabelWrapper = styled.p`
     padding-left: 80px;
     width: 200px;
     color: #fff;
-    font-size: 28px;
+    font-size: 18px;
     font-weight: 400;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-transform: uppercase;
     background-color: #2d2d2d;
+
+    @media(min-width: 768px) {
+        font-size: 28px;
+    }
 `
 
 const ValueWrapper = styled.p`
-    font-size: 58px;
+    font-size: 28px;
     line-height: 80px;
     font-weight: 300;
     color: #fff;
@@ -47,6 +52,10 @@ const ValueWrapper = styled.p`
     ${({ active }) => active && `
         background: linear-gradient(to left, rgb(249, 165, 40) 0%, rgb(249, 165, 40) 100%);
     `}
+
+    @media(min-width: 768px) {
+        font-size: 58px;
+    }
 `
 const MinorTitle = styled.span`
     font-size: 0.7em;

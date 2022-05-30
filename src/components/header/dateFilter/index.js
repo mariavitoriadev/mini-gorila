@@ -5,6 +5,9 @@ import styled from 'styled-components'
 import 'tippy.js/dist/tippy.css'; 
 
 const Wrapper = styled.div`
+    top: 67px;
+    z-index: 1;
+    position: sticky;
     display: flex;
     justify-content: flex-end;
     background-color: #fafafa;

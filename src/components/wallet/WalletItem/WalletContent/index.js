@@ -8,11 +8,15 @@ const Wrapper = styled.div`
     `
 
 const ContentHeader = styled.p`
+    padding-right: 30px;
     padding-top: 20px;
-    padding-right: 122px;
     display: grid;
     grid-column-gap: 10px;
     grid-template-columns: 1fr 120px;
+    
+    @media(min-width: 768px) {
+        padding-right: 122px;
+    }
 `
 
 const ContentHeaderItem = styled.p`
@@ -33,7 +37,6 @@ const ProductItem = styled.div`
 `
 
 const ProductLabel = styled.div`
-    width: 390px;
     padding: 2px 30px;
     display: flex;
     align-items: center;
@@ -60,30 +63,46 @@ const ProductLabel = styled.div`
             `
         }
     }}
+
+    @media(min-width: 768px) {
+        width: 390px;
+    }
 `
 
 const ProductPercent = styled.p`
     color: #2d2d2d;
-    font-size: 36px;
+    font-size: 14px;
     font-weight: 300;
     margin-right: 15px;
+
+    @media(min-width: 768px) {
+        font-size: 36px;
+    }
 `
 
 const ProductType = styled.p`
     color: #2d2d2d;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 14px;
     line-height: 1.9;
     text-transform: uppercase;
+
+    @media(min-width: 768px) {
+        font-size: 20px;
+    }
 `
 
 const ProductContent = styled.div`
     flex-grow: 1;
     display: grid;
-    padding-right: 122px;
+    padding-right: 30px;
     grid-column-gap: 10px;
     grid-template-columns: 1fr 120px;
     background-color: #f0f0f0;
+
+    @media(min-width: 768px) {
+        padding-right: 122px;
+    }
 `
 
 const ProductContentItem = styled.p`
