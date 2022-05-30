@@ -1,10 +1,10 @@
 import React from 'react'
-import Container from '../common/container'
-import ToggleVisibility from './hide'
-import Registers from './registers'
-import NavigationMenu from './navigation'
+import Container from '../common/Container'
+import ToggleVisibility from './ToggleVisibility'
+import Registers from './Registers'
+import NavigationMenu from './NavigationMenu'
 import LogoGorila from '../../assets/logo-gorila.svg'
-import DateFilter from './dateFilter'
+import DateFilter from './DateFilter'
 import styled from 'styled-components'
 
 

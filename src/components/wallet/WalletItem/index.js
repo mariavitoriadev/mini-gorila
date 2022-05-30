@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 
-import Container from '../../common/container'
+import Container from '../../common/Container'
 import WalletContent from './WalletContent'
 
 import ArrowDown from '../../../assets/arrow-down.svg'

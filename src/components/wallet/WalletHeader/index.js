@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from '../../common/container'
+import Container from '../../common/Container'
 import styled from 'styled-components'
 
 import InfoIcon from '../../../assets/information.svg'

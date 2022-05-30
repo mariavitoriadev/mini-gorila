@@ -7,7 +7,7 @@ import ConnectIcon from '../../../assets/navigation/connect-accounts.svg'
 import HelpIcon from '../../../assets/navigation/help.svg'
 import WalletIcon from '../../../assets/navigation/wallet.svg'
 import ToolsDropdown from '../ToolsDropdown'
-import NavItem from './navItem';
+import NavItem from './NavItem';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; 
