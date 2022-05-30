@@ -6,6 +6,9 @@ import styled from 'styled-components'
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; 
 
+import { useDispatch } from 'react-redux'
+import { setHide } from '../../../store/hideContext'
+
 const Wrapper = styled.div`
     flex-grow: 1;
     cursor: pointer;
@@ -18,9 +21,11 @@ const Wrapper = styled.div`
 
 export default function ToggleVisibility() {
     const [visible, setVisible] = useState(true)
+    const dispatch = useDispatch()
 
     const toggle = () => {
         setVisible(!visible)
+        dispatch(setHide())
     }
 
     return (

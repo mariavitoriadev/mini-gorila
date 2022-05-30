@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { useSelector } from 'react-redux'
 
 const Wrapper = styled.div`
     width: 100%;
@@ -112,9 +113,17 @@ const ProductContentItem = styled.p`
     font-size: 14px;
     line-height: 1.14;
     text-align: right;
+
+    ${({ hide }) => hide && 
+        `color: #fff;
+        background-color: #fff;`
+    }
 `
 
 export default function WalletContent(props) {
+
+    const hideSelected = useSelector(state => state.hideContext.value)
+
     return(
         <Wrapper>
             <ContentHeader>
@@ -127,8 +136,8 @@ export default function WalletContent(props) {
                     <ProductType>{props.type}</ProductType>
                 </ProductLabel>
                 <ProductContent>
-                    <ProductContentItem>{props.value}</ProductContentItem>
-                    <ProductContentItem>{props.profit}</ProductContentItem>
+                    <ProductContentItem hide={hideSelected}>{props.value}</ProductContentItem>
+                    <ProductContentItem hide={hideSelected}>{props.profit}</ProductContentItem>
                 </ProductContent>
             </ProductItem>
         </Wrapper>
