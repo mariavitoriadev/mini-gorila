@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const navSelected = createSlice({
     name: 'navContext',
     initialState: {
-      value: 'dashboard'
+      value: 'wallet'
     },
     reducers: {
       setSelected: (state, action) => {

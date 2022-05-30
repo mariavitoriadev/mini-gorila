@@ -20,6 +20,11 @@ const ItemWrapper = styled.p`
         filter: brightness(0) invert(75%) sepia(24%) saturate(7167%) hue-rotate(134deg) brightness(93%) contrast(87%);
     `}
 
+    &:hover {
+        border-top: 5px solid #cacbcc;
+        filter: brightness(0) invert(75%) sepia(24%) saturate(7167%) hue-rotate(134deg) brightness(93%) contrast(87%);
+    }
+
     @media(min-width: 768px) {
         width: 65px;
         height: 65px;
@@ -42,7 +47,7 @@ export default function NavItem(props) {
 
     return(
         <ItemWrapper 
-        onClick={() => dispatch(setSelected(props.name))} 
+        onClick={() => {if(!props.disabled) dispatch(setSelected(props.name))}} 
         active={navSelected === props.name ? true : false}
         >
             <NavIcon src={props.icon}/>

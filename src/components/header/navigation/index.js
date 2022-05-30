@@ -53,18 +53,16 @@ export default function NavigationMenu() {
     return (
         <Wrapper>
             <Tippy content="Dashboard">
-                <Link to="/">
-                    <NavItem name="dashboard" icon={DashIcon}></NavItem>
-                </Link>
+                <NavItem disabled={true} name="dashboard" icon={DashIcon}></NavItem>
             </Tippy>
 
             <Tippy content="Carteira">
-                <Link to="/carteira">
+                <Link to="/">
                     <NavItem name="wallet" icon={WalletIcon}></NavItem>
                 </Link>
             </Tippy>
             
-            <NavItem name="tool" icon={ToolIcon}></NavItem>
+            <NavItem disabled={true} name="tool" icon={ToolIcon}></NavItem>
             
             <Tippy content="Conectar Contas">
                 <Link to="/contas">
@@ -73,7 +71,7 @@ export default function NavigationMenu() {
             </Tippy>
             
             <Tippy content="Ajuda">
-                <NavItem name="help" icon={HelpIcon}></NavItem>
+                <NavItem disabled={true} name="help" icon={HelpIcon}></NavItem>
             </Tippy>
             
             <UserItem>
