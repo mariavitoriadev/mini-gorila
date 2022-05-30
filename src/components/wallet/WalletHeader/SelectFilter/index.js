@@ -5,7 +5,7 @@ import ArrowDown from '../../../../assets/arrow-down.svg'
 import ArrowUp from '../../../../assets/arrow-up.svg'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { setWallet } from '../../../../store/walletContext'
+import { setWallet } from '../../../../store/filterWalletContext'
 
 const Wrapper = styled.div`
     cursor: pointer;
@@ -37,11 +37,11 @@ const Arrow = styled.img`
 
 export default function SelectFilter(props) {
 
-    const walletSelected = useSelector(state => state.walletContext.value)
+    const filterWalletSelected = useSelector(state => state.filterWalletContext.value)
     const dispatch = useDispatch()
 
     function handleClick() {
-        if (props.title === walletSelected) {
+        if (props.title === filterWalletSelected) {
             dispatch(setWallet(null))
         }
         else {
@@ -55,7 +55,7 @@ export default function SelectFilter(props) {
             <FilterTitle>{props.title}</FilterTitle>
             <ArrowWrapper>
                 <FilterPlaceholder>{props.placeholder}</FilterPlaceholder>
-                {props.title === walletSelected? 
+                {props.title === filterWalletSelected? 
                 (<Arrow src={ArrowUp} alt="Seta para cima"></Arrow>) :
                 (<Arrow src={ArrowDown} alt="Seta para baixo"></Arrow>)
                 }    

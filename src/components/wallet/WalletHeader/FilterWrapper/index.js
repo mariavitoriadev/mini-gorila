@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { useSelector } from 'react-redux'
 
 const Wrapper = styled.div`
     top: 130%;
@@ -18,12 +19,15 @@ const FilterContent = styled.div`
     background: white;
 ` 
 
-export default function SelectFilter({children}) {
+export default function SelectFilter(props) {
+
+    const filterWalletSelected = useSelector(state => state.filterWalletContext.value)
 
     return(
+        filterWalletSelected === props.title &&
         <Wrapper>
             <FilterContent>
-                {children}
+                {props.children}
             </FilterContent>
         </Wrapper>
     )

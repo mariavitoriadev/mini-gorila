@@ -7,6 +7,8 @@ import WalletContent from './WalletContent'
 import ArrowDown from '../../../assets/arrow-down.svg'
 import ArrowUp from '../../../assets/arrow-up.svg'
 
+import { useSelector } from 'react-redux'
+
 const Wrapper = styled.div`
     cursor: pointer;
     width: 100%;
@@ -15,7 +17,7 @@ const Wrapper = styled.div`
     padding-bottom: 10px;
 `
 
-const HeaderItem = styled.p`
+const HeaderItem = styled.div`
     height: 80px;
     display: flex;
 `
@@ -70,9 +72,15 @@ const Arrow = styled.img`
 
 export default function WalletItem(props) {
 
+    let showItem = false
     const [opened, setOpened] = useState(false)
+    const filterPositionsSelected = useSelector(state => state.filterPositionsContext.value)
+    
+    if(filterPositionsSelected === 'Abertas e Fechadas' || filterPositionsSelected === props.status) showItem = true
+    else showItem = false
 
     return(
+        showItem &&
         <Container>
             <Wrapper>
                 <HeaderItem onClick={() => setOpened(!opened)}>

@@ -1,6 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
+import { useDispatch } from 'react-redux'
+import { setWallet } from '../../../../store/filterWalletContext'
+import { setFilterPosition } from '../../../../store/filterPositionsContext'
+
+import { useSelector } from 'react-redux'
 
 const Wrapper = styled.div`
     position: relative;
@@ -26,12 +31,20 @@ const FilterItem = styled.p`
     }
 ` 
 
-export default function SelectFilter({children}) {
+export default function SelectFilter() {
+
+    const dispatch = useDispatch()
+    const filterPositionsSelected = useSelector(state => state.filterPositionsContext.value)
+
+    function handleClick(position) {
+        dispatch(setFilterPosition(position))
+        dispatch(setWallet(null))
+    }
 
     return(
         <Wrapper>
-            <FilterItem>Abertas</FilterItem>
-            <FilterItem active={true}>Abertas e Fechadas</FilterItem>
+            <FilterItem onClick={() =>  handleClick('Abertas')} active={filterPositionsSelected === 'Abertas'}>Abertas</FilterItem>
+            <FilterItem onClick={() =>  handleClick('Abertas e Fechadas')} active={filterPositionsSelected === 'Abertas e Fechadas'}>Abertas e Fechadas</FilterItem>
         </Wrapper>
     )
 }

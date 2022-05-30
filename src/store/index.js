@@ -1,14 +1,16 @@
 
 import navSelected from './navContext'
-import walletSelected from './walletContext'
+import filterWalletSelected from './filterWalletContext'
 import hideSelected from './hideContext'
+import filterPositionsSelected from './filterPositionsContext'
 import { configureStore } from '@reduxjs/toolkit'
 
 const store = configureStore({
     reducer: {
         navContext : navSelected,
-        walletContext: walletSelected,
-        hideContext: hideSelected
+        filterWalletContext: filterWalletSelected,
+        hideContext: hideSelected,
+        filterPositionsContext: filterPositionsSelected
     }
 })
 

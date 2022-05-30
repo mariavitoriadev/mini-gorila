@@ -10,8 +10,6 @@ import DueDate from './Filters/DueDate'
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; 
 
-import { useSelector } from 'react-redux'
-
 const Wrapper = styled.div`
     padding: 24px 0;
     z-index: 1;
@@ -61,7 +59,6 @@ const FilterItem = styled.div`
 
 export default function WalletHeader() {
 
-    const walletSelected = useSelector(state => state.walletContext.value)
 
     return(
         <Wrapper>
@@ -80,19 +77,15 @@ export default function WalletHeader() {
                 <FlexRowBottom>
                     <FilterItem>
                         <SelectFilter title="Posições" placeholder="Abertas e Fechadas"></SelectFilter>
-                        {'Posições' === walletSelected && 
-                            (<FilterWrapper>
+                            <FilterWrapper  title="Posições">
                                 <PositionsFilter></PositionsFilter>
-                            </FilterWrapper>)
-                        }
+                            </FilterWrapper>
                     </FilterItem>
                     <FilterItem>
                         <SelectFilter title="Vencimento" placeholder="Tudo"></SelectFilter>
-                        {'Vencimento' === walletSelected &&
-                            (<FilterWrapper>
+                            <FilterWrapper title="Vencimento">
                                 <DueDate></DueDate>
-                            </FilterWrapper>)
-                        }   
+                            </FilterWrapper>
                     </FilterItem>
                 </FlexRowBottom>
             </Container>
