@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { setSelected } from '../../../../store/navContext'
 
-const ItemWrapper = styled.a`
+const ItemWrapper = styled.p`
     width: 50px;
     height: 50px; 
     cursor: pointer;
@@ -37,10 +37,8 @@ const NavIcon = styled.img`
 
 export default function NavItem(props) {
 
-    
     const navSelected = useSelector(state => state.navContext.value)
     const dispatch = useDispatch()
-
 
     return(
         <ItemWrapper 

@@ -1,10 +1,12 @@
 
 import navSelected from './navContext'
+import walletSelected from './walletContext'
 import { configureStore } from '@reduxjs/toolkit'
 
 const store = configureStore({
     reducer: {
-        navContext : navSelected
+        navContext : navSelected,
+        walletContext: walletSelected,
     }
 })
 
