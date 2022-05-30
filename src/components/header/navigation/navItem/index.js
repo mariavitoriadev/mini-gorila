@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
 import { useSelector, useDispatch } from 'react-redux'
@@ -20,16 +20,19 @@ const ItemWrapper = styled.p`
         filter: brightness(0) invert(75%) sepia(24%) saturate(7167%) hue-rotate(134deg) brightness(93%) contrast(87%);
     `}
 
-    &:hover {
-        border-top: 5px solid #cacbcc;
-        filter: brightness(0) invert(75%) sepia(24%) saturate(7167%) hue-rotate(134deg) brightness(93%) contrast(87%);
-    }
-
     @media(min-width: 768px) {
         width: 65px;
         height: 65px;
     }
 `
+
+const Wrapper = styled.div`
+    &:hover ${ItemWrapper}{
+        border-top: 5px solid #cacbcc;
+        filter: brightness(0) invert(75%) sepia(24%) saturate(7167%) hue-rotate(134deg) brightness(93%) contrast(87%);
+    }
+`
+
 const NavIcon = styled.img`
     width: 25px;
     height: 25px;
@@ -42,15 +45,20 @@ const NavIcon = styled.img`
 
 export default function NavItem(props) {
 
+    const [visible, setVisible] = useState(false)
+
     const navSelected = useSelector(state => state.navContext.value)
     const dispatch = useDispatch()
 
     return(
-        <ItemWrapper 
-        onClick={() => {if(!props.disabled) dispatch(setSelected(props.name))}} 
-        active={navSelected === props.name ? true : false}
-        >
-            <NavIcon src={props.icon}/>
-        </ItemWrapper>
+        <Wrapper onMouseOver={() => setVisible(true)} onMouseLeave={() => setVisible(false)}>
+            <ItemWrapper 
+            onClick={() => {if(!props.disabled) dispatch(setSelected(props.name))}} 
+            active={navSelected === props.name ? true : false}
+            >
+                <NavIcon src={props.icon}/>
+            </ItemWrapper>
+            {visible && props.children}
+        </Wrapper>
     )
 }

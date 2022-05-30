@@ -6,6 +6,7 @@ import ToolIcon from '../../../assets/navigation/advanced-tools.svg'
 import ConnectIcon from '../../../assets/navigation/connect-accounts.svg'
 import HelpIcon from '../../../assets/navigation/help.svg'
 import WalletIcon from '../../../assets/navigation/wallet.svg'
+import ToolsDropdown from '../ToolsDropdown'
 import NavItem from './navItem';
 
 import Tippy from '@tippyjs/react';
@@ -62,7 +63,9 @@ export default function NavigationMenu() {
                 </Link>
             </Tippy>
             
-            <NavItem disabled={true} name="tool" icon={ToolIcon}></NavItem>
+            <NavItem disabled={true} name="tool" icon={ToolIcon}>
+                <ToolsDropdown></ToolsDropdown>
+            </NavItem>
             
             <Tippy content="Conectar Contas">
                 <Link to="/contas">

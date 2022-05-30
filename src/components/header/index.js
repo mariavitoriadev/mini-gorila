@@ -12,10 +12,9 @@ const Header = styled.div`
     background-color: #FFF;
     position: sticky;
     top: 0;
-    z-index: 1;
-
+    z-index: 2;
+    
     @media(min-width: 768px) {
-        z-index: 1;
         box-shadow: 0 2px 5px 0 rgb(0 0 0 / 10%);
     }
 `
